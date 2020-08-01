@@ -27,7 +27,7 @@ public class Manager: MonoBehaviour
 
     void Start()
     {
-        
+        GameObject kato = new GameObject("kato");
     }
 
     void Update()

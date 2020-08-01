@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kusunoki : MonoBehaviour
+public class Kusunoki : Item
 {
     public virtual void Start()
     {

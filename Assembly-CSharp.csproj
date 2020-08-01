@@ -68,6 +68,9 @@
     <Compile Include="Assets\Character\Syokisyoki.cs" />
     <Compile Include="Assets\items\Credit.cs" />
     <Compile Include="Assets\items\Item.cs" />
+    <Compile Include="Assets\items\Kakeru.cs" />
+    <Compile Include="Assets\items\Kusunoki.cs" />
+    <Compile Include="Assets\items\Yamashita.cs" />
     <Compile Include="Assets\Manager.cs" />
     <Compile Include="Assets\ParameterData.cs" />
     <Reference Include="Unity.Timeline.Editor">
