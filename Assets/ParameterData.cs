@@ -6,10 +6,10 @@ public class ParameterData
 {
     public int Score { get; private set; }
     public int BlackDepth { get; private set; }
-    public int Speed { get; private set; }
+    public double Speed { get; private set; }
     public int Credit { get; private set; }
     
-    public ParameterData(int Score, int BlackDepth, int Speed, int Credit)
+    public ParameterData(int Score, int BlackDepth, double Speed, int Credit)
     {
         this.Score = Score;
         this.BlackDepth = BlackDepth;
@@ -21,7 +21,7 @@ public class ParameterData
     {
         this.Score += newParameter.Score;
         this.BlackDepth += newParameter.BlackDepth;
-        this.Speed += newParameter.Speed;
+        this.Speed *= newParameter.Speed;
         this.Credit += newParameter.Credit;
     }
 
