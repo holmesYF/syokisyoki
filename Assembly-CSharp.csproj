@@ -63,7 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scenes\NewBehaviourScript.cs" />
+    <Compile Include="Assets\ChangeScenesMaingame.cs" />
+    <Compile Include="Assets\Character\Katosan.cs" />
+    <Compile Include="Assets\Character\Syokisyoki.cs" />
+    <Compile Include="Assets\items\Credit.cs" />
+    <Compile Include="Assets\items\Item.cs" />
+    <Compile Include="Assets\Manager.cs" />
+    <Compile Include="Assets\ParameterData.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/koichiro/Desktop/Syokisyoki/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
