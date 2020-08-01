@@ -27,6 +27,7 @@ public class Syokisyoki : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //　油布の担当
+        //  Parameter.Speedの速度で、矢印キー入力に応じ動く
     }
 }
