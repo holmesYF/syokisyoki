@@ -35,5 +35,10 @@ public class Manager: MonoBehaviour
 
     }
 
+    public void NotifyOnTouch(ParameterData parameterData)
+    {
+        
+    }
+
 }
 
