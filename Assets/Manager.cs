@@ -65,14 +65,9 @@ public class Manager: MonoBehaviour
         CircleCollider2D syoki_collider = Syokisyoki.GetComponent<CircleCollider2D>();
         syoki_collider.radius = 5;//syokisyokiの当たり判定サイズ
         syoki_collider.offset = syokisyoki_collider;//当たり判定オフセット 名前が微妙
-<<<<<<< HEAD
-        syokisyoki.AddComponent<Rigidbody2D>();
-        syokisyoki.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        syokisyoki.AddComponent<Syokisyoki>();
-=======
+        //syokisyoki.AddComponent<Syokisyoki>();
         Syokisyoki.AddComponent<Rigidbody2D>();
         Syokisyoki.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
->>>>>>> ba03a8633848211a29cbb9a076d00f0714ad8ca1
     }
 
 
@@ -83,7 +78,6 @@ public class Manager: MonoBehaviour
 
     public void NotifyOnTouch(ParameterData parameterData)
     {
-        
     }
 
 }
