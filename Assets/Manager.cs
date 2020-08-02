@@ -41,13 +41,15 @@ public class Manager: MonoBehaviour
     {
         Kato = new GameObject("kato_prefab");
         Vector2 kato_farst_pos = new Vector2(0.0f, 10.0f);
+
         Vector2 kato_size = new Vector2(3.0f, 3.0f);
 
-        Kato.AddComponent<Transform>();
         Kato.AddComponent<SpriteRenderer>();
         Kato.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("kato");
         Kato.transform.position = kato_farst_pos;
         Kato.transform.localScale = kato_size;
+
+        Kato.AddComponent<Katosan>();
     }
     private void CreateSyokisyoki()
     {
@@ -55,8 +57,8 @@ public class Manager: MonoBehaviour
         Vector2 syokisyoki_size = new Vector2(0.6f, 0.6f);
         Vector2 syokisyoki_collider = new Vector2(-0.21f, 0.05f);
 
+
         Syokisyoki = new GameObject("syoki_prefab");
-        Syokisyoki.AddComponent<Transform>();
         Syokisyoki.AddComponent<SpriteRenderer>();
         Syokisyoki.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("syokisyoki");
         Syokisyoki.transform.position = syokisyoki_farst_pos;
