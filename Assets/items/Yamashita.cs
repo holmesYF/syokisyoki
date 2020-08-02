@@ -8,7 +8,7 @@ public class Yamashita : Item
     {
         // 油布
         this.Picture = Resources.Load <Sprite>("yamasita");
-        this.ParameterData = new ParameterData(0, 0, 0.5, 0);
+        this.ParameterData = new ParameterData(0, 0, 0.5f, 0);
         this.Speed = 1;
         this.Name = "Yamashita";
     }

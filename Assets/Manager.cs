@@ -56,6 +56,7 @@ public class Manager: MonoBehaviour
         syoki_collider.offset = syokisyoki_collider;//当たり判定オフセット 名前が微妙
         syokisyoki.AddComponent<Rigidbody2D>();
         syokisyoki.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        syokisyoki.AddComponent<Syokisyoki>();
     }
 
     void Update()
