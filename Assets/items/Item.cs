@@ -10,11 +10,8 @@ public abstract class Item : MonoBehaviour
     public double Speed { get; protected set; }
     public string Name { get; protected set; }
 
-    
-    public abstract void Start()
-    {
 
-    }
+    public abstract void Start();
 
     public virtual void Update()
     {
