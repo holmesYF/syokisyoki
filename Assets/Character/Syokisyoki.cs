@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Syokisyoki : MonoBehaviour
 {
-    public Syokisyoki Instance { get; } = new Syokisyoki();
+    public static Syokisyoki Instance { get; } = new Syokisyoki();
     public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,1,0);
 
 
@@ -27,7 +27,7 @@ public class Syokisyoki : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Instance.ParameterData.Speed);
+        Debug.Log(ParameterData.Speed);
         //　油布の担当
         //  Parameter.Speedの速度で、矢印キー入力に応じ動く
         if (Input.GetKey(KeyCode.LeftArrow))

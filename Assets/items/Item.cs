@@ -24,7 +24,7 @@ public abstract class Item : MonoBehaviour
         t.position = pos;
     }
 
-    public void ChangeItemSpeed(double Speed)
+    public void ChangeItemSpeed(float Speed)
     {
         this.Speed = Speed;
     }
@@ -35,4 +35,9 @@ public abstract class Item : MonoBehaviour
     //{
     //    Manager.NotifyOnTouch(this.ParameterData);
     //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Manager.NotifyOnTouch(this.ParameterData);
+        Destroy(this.gameObject);
+    }
 }
