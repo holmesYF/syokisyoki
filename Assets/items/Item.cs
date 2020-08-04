@@ -10,11 +10,8 @@ public abstract class Item : MonoBehaviour
     public double Speed { get; protected set; }
     public string Name { get; protected set; }
 
-    
-    public abstract void Start()
-    {
 
-    }
+    public abstract void Start();
 
     public virtual void Update()
     {
@@ -37,7 +34,7 @@ public abstract class Item : MonoBehaviour
     //}
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Manager.NotifyOnTouch(this.ParameterData);
+        Manager.Instance.NotifyOnTouch(this.ParameterData);
         Destroy(this.gameObject);
     }
 }

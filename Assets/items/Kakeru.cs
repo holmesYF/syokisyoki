@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kakeru : Item
 {
-    public virtual void Start()
+    public override void Start()
     {
         // 油布
         this.Picture = Resources.Load<Sprite>("kakeru");
