@@ -4,13 +4,8 @@ using UnityEngine;
 
 public abstract class Strategy : MonoBehaviour
 {
-    protected Order order;
-    protected Strategy()
-    {
-        this.order = new Order();
-    }
     protected Vector2 pos;
-    public abstract Order getOrder();
+    public abstract Vector2 get_pos();
     public virtual void set_pos(Vector2 pos) {
         this.pos = pos;
     }
