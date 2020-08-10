@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Katosan : MonoBehaviour
 {
     public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,0.3f,0);

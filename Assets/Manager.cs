@@ -19,17 +19,17 @@ public class Manager: MonoBehaviour
     private Manager()
     {
         ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
+        ElapsedTime.Start();
     }
 
     private void CreateScene(object sender, ElapsedEventArgs e)
     {
         TermCounter++;
-
+        ItemFactory.Instance.CreateItem(ItemList.Kusunoki);
     }
 
     void Start()
     {
-
     }
 
     private void Awake()
