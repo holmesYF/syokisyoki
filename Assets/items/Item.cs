@@ -6,7 +6,6 @@ public abstract class Item : MonoBehaviour
 {
     public ParameterData ParameterData { get; protected set; }
     public Sprite Picture { get; protected set; }
-    //textuerからSpriteにした
     public double Speed { get; protected set; }
     public string Name { get; protected set; }
 
