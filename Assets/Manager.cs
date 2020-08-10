@@ -50,6 +50,7 @@ public class Manager: MonoBehaviour
         Kato.transform.localScale = kato_size;
 
         Kato.AddComponent<Katosan>();
+        Kato.GetComponent<Katosan>().set_strategy(new Easy());
     }
     private void CreateSyokisyoki()
     {
