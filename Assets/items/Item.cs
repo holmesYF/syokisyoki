@@ -19,6 +19,10 @@ public abstract class Item : MonoBehaviour
         Vector3 pos = t.position;
         pos.y += 0.01f * (float)Speed;
         t.position = pos;
+        if(this.transform.position.y < -100)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void ChangeItemSpeed(float Speed)

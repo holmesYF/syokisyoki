@@ -80,7 +80,7 @@ public class Manager: MonoBehaviour
 
     public void NotifyOnTouch(ParameterData parameterData)
     {
-        
+        Syokisyoki.GetComponent<Syokisyoki>().UpdateParameterData(parameterData);
     }
 
 }
