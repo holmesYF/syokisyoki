@@ -66,6 +66,7 @@
     <Compile Include="Assets\ChangeScenesMaingame.cs" />
     <Compile Include="Assets\Character\Easy.cs" />
     <Compile Include="Assets\Character\Katosan.cs" />
+    <Compile Include="Assets\Character\Normal.cs" />
     <Compile Include="Assets\Character\Order.cs" />
     <Compile Include="Assets\Character\Strategy.cs" />
     <Compile Include="Assets\Character\Syokisyoki.cs" />
@@ -78,9 +79,6 @@
     <Compile Include="Assets\items\Yamashita.cs" />
     <Compile Include="Assets\Manager.cs" />
     <Compile Include="Assets\ParameterData.cs" />
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/koichiro/Desktop/Syokisyoki/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/koichiro/Desktop/Syokisyoki/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -89,9 +87,6 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/koichiro/Desktop/Syokisyoki/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/koichiro/Desktop/Syokisyoki/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/koichiro/Desktop/Syokisyoki/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>

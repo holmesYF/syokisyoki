@@ -30,11 +30,8 @@ public class Katosan : MonoBehaviour
         // 油布の担当場所
         // Parameter.Speedの速度で、左右に動く
         strategy.set_pos(this.gameObject.transform.position);
-        Order order = strategy.getOrder();
-        if (order.order_flag)
-        {
-            //行動
-        }
+        this.transform.position = strategy.get_pos();
+
     }
 
     public void set_strategy(Strategy strategy)
