@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\ChangeScenesMaingame.cs" />
     <Compile Include="Assets\Character\Easy.cs" />
+    <Compile Include="Assets\Character\Hard.cs" />
     <Compile Include="Assets\Character\Katosan.cs" />
     <Compile Include="Assets\Character\Normal.cs" />
     <Compile Include="Assets\Character\Order.cs" />

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Syokisyoki : MonoBehaviour
 {
     public static Syokisyoki Instance { get; } = new Syokisyoki();
-    public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,0.7f,0);
+    public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,1.0f,0);
 
 
     private Syokisyoki()
