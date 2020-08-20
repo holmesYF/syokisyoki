@@ -8,7 +8,7 @@ public class Manager: MonoBehaviour
     #region Field
     public int AllCredit { get; private set; }
     public int HasCredit { get; }
-    public Timer ElapsedTime = new Timer(1000); // 1秒ごとに関数を実行
+    public Timer ElapsedTime = new Timer(10000); // 1秒ごとに関数を実行
     public int TermCounter { get; private set; } = 1;
     #endregion
 
@@ -18,18 +18,19 @@ public class Manager: MonoBehaviour
     public static Manager Instance { get; private set; } = new Manager();
     private Manager()
     {
-        ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
-        ElapsedTime.Start();
+
     }
 
     private void CreateScene(object sender, ElapsedEventArgs e)
     {
-        TermCounter++;
+        Instance.TermCounter += 1;
         ItemFactory.Instance.CreateItem(ItemList.Kusunoki);
     }
 
     void Start()
     {
+        ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
+        ElapsedTime.Start();
     }
 
     private void Awake()
