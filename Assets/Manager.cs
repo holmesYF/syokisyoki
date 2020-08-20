@@ -9,7 +9,7 @@ public class Manager: MonoBehaviour
     public int AllCredit { get; private set; }
     public int HasCredit { get; }
     public Timer ElapsedTime = new Timer(10000); // 1秒ごとに関数を実行
-    public int TermCounter { get; private set; } = 1;
+    public int TermCounter { get; private set; } = 2;
     #endregion
 
     public GameObject Kato { get; private set; }

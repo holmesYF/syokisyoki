@@ -71,6 +71,7 @@
     <Compile Include="Assets\Character\Order.cs" />
     <Compile Include="Assets\Character\Strategy.cs" />
     <Compile Include="Assets\Character\Syokisyoki.cs" />
+    <Compile Include="Assets\GradeStateManager.cs" />
     <Compile Include="Assets\items\Credit.cs" />
     <Compile Include="Assets\items\Item.cs" />
     <Compile Include="Assets\items\ItemFactory.cs" />

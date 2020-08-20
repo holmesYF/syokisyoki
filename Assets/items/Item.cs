@@ -16,9 +16,9 @@ public abstract class Item : MonoBehaviour
     {
         Transform t = this.transform;
         Vector3 pos = t.position;
-        pos.y += 0.01f * (float)Speed;
+        pos.y -= 0.01f * (float)Speed;
         t.position = pos;
-        if(this.transform.position.y < -100)
+        if(this.transform.position.y < -12)
         {
             Destroy(this.gameObject);
         }
