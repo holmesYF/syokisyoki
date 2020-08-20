@@ -6,7 +6,6 @@ public abstract class Item : MonoBehaviour
 {
     public ParameterData ParameterData { get; protected set; }
     public Sprite Picture { get; protected set; }
-    //textuerからSpriteにした
     public double Speed { get; protected set; }
     public string Name { get; protected set; }
 
@@ -17,8 +16,12 @@ public abstract class Item : MonoBehaviour
     {
         Transform t = this.transform;
         Vector3 pos = t.position;
-        pos.y += 0.01f * (float)Speed;
+        pos.y -= 0.02f * (float)Speed;
         t.position = pos;
+        if(this.transform.position.y < -12)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void ChangeItemSpeed(float Speed)
@@ -32,9 +35,11 @@ public abstract class Item : MonoBehaviour
     //{
     //    Manager.NotifyOnTouch(this.ParameterData);
     //}
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Manager.NotifyOnTouch(this.ParameterData);
+        Debug.Log("touched");
+        Manager.Instance.NotifyOnTouch(this.ParameterData);
+        Debug.Log("touched2");
         Destroy(this.gameObject);
     }
 }

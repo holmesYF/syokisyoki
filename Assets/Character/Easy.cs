@@ -4,8 +4,26 @@ using UnityEngine;
 
 public class Easy : Strategy
 {
-     public override Order getOrder()
+    bool direction;
+    public override Vector2 get_pos()
     {
-        return order;
+        if(this.pos.x >= 25.0f)
+        {
+            this.direction = false;
+        }
+        else if(this.pos.x <= -25.0f)
+        {
+            this.direction = true;
+        }
+        if (direction)
+        {
+            Vector2 next_pos = new Vector2(this.pos.x + this.data.Speed,this.pos.y);
+            return next_pos;
+        }
+        else
+        {
+            Vector2 next_pos = new Vector2(this.pos.x - this.data.Speed, this.pos.y);
+            return next_pos;
+        }
     }
 }

@@ -8,34 +8,52 @@ public class Manager: MonoBehaviour
     #region Field
     public int AllCredit { get; private set; }
     public int HasCredit { get; }
-    public Timer ElapsedTime = new Timer(1000); // 1秒ごとに関数を実行
-    public int TermCounter { get; private set; } = 1;
+    public Timer ElapsedTime = new Timer(10000); // 1秒ごとに関数を実行
+    public int TermCounter { get; private set; } = 2;
     #endregion
-
+    float firsttime;
     public GameObject Kato { get; private set; }
     public GameObject Syokisyoki { get; private set; }
-
+    //public ItemFactory ItemFactory = new ItemFactory();
     public static Manager Instance { get; private set; } = new Manager();
     private Manager()
     {
-        ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
+
     }
 
     private void CreateScene(object sender, ElapsedEventArgs e)
     {
-        TermCounter++;
 
+        Debug.Log("cre8");
+        Debug_ d = GetComponent<Debug_>();
+        d.call();
+        Instance.TermCounter += 1;
+        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki);
+    }
+
+    private void CreateScene2()
+    {
+        Debug.Log("cre8");
+        Debug_ d = GetComponent<Debug_>();
+        d.call();
+        Instance.TermCounter += 1;
+        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki);
     }
 
     void Start()
     {
-
+        //ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
+        //ElapsedTime.Start();
+        //Debug_ d = GetComponent<Debug_>();
+        //d.call();
+        NotifyOnTouch(new ParameterData(0, 0, 1.0f, 0));
     }
 
     private void Awake()
     {
         CreateKato();
         CreateSyokisyoki();
+        firsttime = 5;
     }
     private void CreateKato()
     {
@@ -50,7 +68,7 @@ public class Manager: MonoBehaviour
         Kato.transform.localScale = kato_size;
 
         Kato.AddComponent<Katosan>();
-        Kato.GetComponent<Katosan>().set_strategy(new Easy());
+        Kato.GetComponent<Katosan>().set_strategy(new Hard());
     }
     private void CreateSyokisyoki()
     {
@@ -76,7 +94,11 @@ public class Manager: MonoBehaviour
 
     void Update()
     {
-
+        if(firsttime <= Time.time)
+        {
+            firsttime = Time.time + 5;
+            CreateScene2();
+        }
     }
 
     public void NotifyOnTouch(ParameterData parameterData)

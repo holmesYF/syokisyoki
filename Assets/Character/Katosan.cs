@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Katosan : MonoBehaviour
 {
-    public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,1,0);
+    public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,0.3f,0);
     public static Katosan Instance { get; } = new Katosan();
     private Strategy strategy;
+
 
     private Katosan()
     {
@@ -30,11 +30,9 @@ public class Katosan : MonoBehaviour
         // 油布の担当場所
         // Parameter.Speedの速度で、左右に動く
         strategy.set_pos(this.gameObject.transform.position);
-        Order order = strategy.getOrder();
-        if (order.order_flag)
-        {
-            //行動
-        }
+        strategy.set_paramater(this.ParameterData);
+        this.transform.position = strategy.get_pos();
+
     }
 
     public void set_strategy(Strategy strategy)
