@@ -76,7 +76,7 @@ public class Manager: MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     public void NotifyOnTouch(ParameterData parameterData)
