@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Normal : Strategy
 {
-    float MOVE = 2.0f;
     int direction = 1;
     int counter = 0;
     public override Vector2 get_pos()
@@ -12,8 +11,8 @@ public class Normal : Strategy
         if(counter == 0)
         {
             direction *= -1;
-            counter = Random.Range(5, 20);
-            Vector2 next_pos = new Vector2(this.pos.x + direction * MOVE,this.pos.y);
+            counter = Random.Range(10, 100);
+            Vector2 next_pos = new Vector2(this.pos.x + direction * this.data.Speed,this.pos.y);
             return next_pos;
         }
         else
@@ -23,7 +22,7 @@ public class Normal : Strategy
             {
                 direction *= -1;
             }
-            Vector2 next_pos = new Vector2(this.pos.x + direction * MOVE, this.pos.y);
+            Vector2 next_pos = new Vector2(this.pos.x + direction * this.data.Speed, this.pos.y);
             return next_pos;
         }
     }

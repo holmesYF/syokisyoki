@@ -17,12 +17,12 @@ public class Easy : Strategy
         }
         if (direction)
         {
-            Vector2 next_pos = new Vector2(this.pos.x + 0.2f,this.pos.y);
+            Vector2 next_pos = new Vector2(this.pos.x + this.data.Speed,this.pos.y);
             return next_pos;
         }
         else
         {
-            Vector2 next_pos = new Vector2(this.pos.x - 0.2f, this.pos.y);
+            Vector2 next_pos = new Vector2(this.pos.x - this.data.Speed, this.pos.y);
             return next_pos;
         }
     }
