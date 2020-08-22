@@ -44,6 +44,8 @@ public class Manager: MonoBehaviour
     IEnumerator CreateItems()
     {
         this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki, Vector2.zero);
+        yield return new WaitForSeconds(1);
+        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Hiro, Vector2.zero);
         yield return new WaitForSeconds(1); 
         this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kakeru, Vector2.zero);
         yield return new WaitForSeconds(2);  

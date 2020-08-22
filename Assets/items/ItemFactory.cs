@@ -8,6 +8,7 @@ public class ItemFactory : MonoBehaviour
     GameObject kakeru_prefab;
     GameObject yamasita_prefab;
     GameObject credit_prefab;
+    GameObject hiro_prefab;
    // public static ItemFactory Instance { get; private set; } = new ItemFactory();
 
     public Dictionary<ItemList, int> CreatedItemNum { get; private set; } = new Dictionary<ItemList, int>();
@@ -24,6 +25,7 @@ public class ItemFactory : MonoBehaviour
         kakeru_prefab = (GameObject)Resources.Load("kakeru_prefab");
         yamasita_prefab = (GameObject)Resources.Load("yamasita_prefab");
         credit_prefab = (GameObject)Resources.Load("credit_prefab");
+        hiro_prefab = (GameObject)Resources.Load("hiro_prefab");
     }
     private void InitCreatedItemNum()
     {
@@ -31,6 +33,7 @@ public class ItemFactory : MonoBehaviour
         CreatedItemNum.Add(ItemList.Kakeru, 0);
         CreatedItemNum.Add(ItemList.Kusunoki, 0);
         CreatedItemNum.Add(ItemList.Yamashita, 0);
+        CreatedItemNum.Add(ItemList.Hiro, 0);
     }
 
     public void CreateItem(ItemList targetItem, Vector2 position)
@@ -56,6 +59,10 @@ public class ItemFactory : MonoBehaviour
 
             case ItemList.Yamashita:
                 Instantiate(yamasita_prefab, firstPosition, Quaternion.identity);
+                break;
+
+            case ItemList.Hiro:
+                Instantiate(hiro_prefab, firstPosition, Quaternion.identity);
                 break;
 
             default:

@@ -7,5 +7,6 @@ public enum ItemList
     Credit,
     Kakeru,
     Yamashita,
-    Kusunoki
+    Kusunoki,
+    Hiro
 }

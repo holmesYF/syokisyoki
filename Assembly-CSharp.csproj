@@ -76,6 +76,7 @@
     <Compile Include="Assets\Debug_.cs" />
     <Compile Include="Assets\GradeStateManager.cs" />
     <Compile Include="Assets\items\Credit.cs" />
+    <Compile Include="Assets\items\Hiro.cs" />
     <Compile Include="Assets\items\Item.cs" />
     <Compile Include="Assets\items\ItemFactory.cs" />
     <Compile Include="Assets\items\ItemList.cs" />
