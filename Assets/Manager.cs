@@ -64,7 +64,7 @@ public class Manager: MonoBehaviour
     private void CreateKato()
     {
         Kato = new GameObject("kato_prefab");
-        Vector2 kato_farst_pos = new Vector2(0.0f, 10.0f);
+        Vector2 kato_farst_pos = new Vector2(0.0f, 11.0f);
 
         Vector2 kato_size = new Vector2(3.0f, 3.0f);
 
@@ -78,7 +78,7 @@ public class Manager: MonoBehaviour
     }
     private void CreateSyokisyoki()
     {
-        Vector2 syokisyoki_farst_pos = new Vector2(0.0f, -9.0f);
+        Vector2 syokisyoki_farst_pos = new Vector2(0.0f, -11.0f);
         Vector2 syokisyoki_size = new Vector2(0.6f, 0.6f);
         Vector2 syokisyoki_collider = new Vector2(-0.21f, 0.05f);
 
