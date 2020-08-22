@@ -111,6 +111,8 @@ public class Manager: MonoBehaviour
             }
             ScoreObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
             GradeObject.GetComponent<Text>().text = GradeStateManager.GetCurrentGrade(Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit);
+            if (Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit == 16)
+                GameClear();
         }
     }
 

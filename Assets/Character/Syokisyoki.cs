@@ -7,7 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Syokisyoki : MonoBehaviour
 {
     //public static Syokisyoki Instance { get; } = new Syokisyoki();
-    public ParameterData ParameterData { get; private set; } = new ParameterData(0,255,1.0f,2);
+    public ParameterData ParameterData { get; private set; } = new ParameterData(0,255,1.0f,15);
     SpriteRenderer syokirenderer;
     public bool GameFlag;
 
