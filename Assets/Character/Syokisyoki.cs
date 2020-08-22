@@ -28,7 +28,7 @@ public class Syokisyoki : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        syokirenderer.color = new Color(ParameterData.BlackDepth, ParameterData.BlackDepth, ParameterData.BlackDepth,255);
+        syokirenderer.color = new Color(ParameterData.BlackDepth/255f, ParameterData.BlackDepth/255f, ParameterData.BlackDepth/255f,255);
         Debug.Log(ParameterData.BlackDepth);
         Debug.Log(this.gameObject.GetComponent<SpriteRenderer>().color);
         //　油布の担当
