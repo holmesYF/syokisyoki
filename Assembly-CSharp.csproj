@@ -82,6 +82,7 @@
     <Compile Include="Assets\items\Kakeru.cs" />
     <Compile Include="Assets\items\Kusunoki.cs" />
     <Compile Include="Assets\items\Yamashita.cs" />
+    <Compile Include="Assets\Level.cs" />
     <Compile Include="Assets\Manager.cs" />
     <Compile Include="Assets\ParameterData.cs" />
     <Reference Include="Unity.VSCode.Editor">

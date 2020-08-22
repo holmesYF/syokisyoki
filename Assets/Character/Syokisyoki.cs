@@ -56,5 +56,6 @@ public class Syokisyoki : MonoBehaviour
     {
         UpdateParameterData(collision.GetComponent<Item>().ParameterData);
         Destroy(collision.gameObject);
+        Debug.Log(this.ParameterData.Credit);
     }
 }

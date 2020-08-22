@@ -9,7 +9,7 @@ public class Hard : Strategy
     {
         if(counter <= 0)
         {
-            counter = 100;
+            counter = 10;
             Vector2 next_pos = new Vector2(Random.Range(-25, 25), this.pos.y);
             return next_pos;
         }

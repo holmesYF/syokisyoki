@@ -76,7 +76,7 @@ public class Manager: MonoBehaviour
         Kato.transform.localScale = kato_size;
 
         Kato.AddComponent<Katosan>();
-        Kato.GetComponent<Katosan>().set_strategy(new Hard());
+        Kato.GetComponent<Katosan>().set_strategy(Level.get_level());
     }
     private void CreateSyokisyoki()
     {
@@ -111,6 +111,8 @@ public class Manager: MonoBehaviour
             }
             ScoreObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
             GradeObject.GetComponent<Text>().text = GradeStateManager.GetCurrentGrade(Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit);
+            if (Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit == 16)
+                GameClear();
         }
     }
 
