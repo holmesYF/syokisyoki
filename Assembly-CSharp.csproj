@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Chang.cs" />
+    <Compile Include="Assets\Change.cs" />
     <Compile Include="Assets\ChangeScenesMaingame.cs" />
     <Compile Include="Assets\Character\Easy.cs" />
     <Compile Include="Assets\Character\Hard.cs" />

@@ -10,4 +10,9 @@ public class ChangeScenesMaingame : MonoBehaviour
     {
         SceneManager.LoadScene("Maingame");
     }
+
+    public void change_scenes_start()
+    {
+        SceneManager.LoadScene("Start");
+    }
 }
