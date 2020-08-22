@@ -16,8 +16,12 @@ public class GradeStateManager
         {
             result = "専攻科 " + ((term - 10) / 2).ToString() + "年";
         }
+        else if (term == 16)
+            return "専攻科 2 年 後期";
         else
+        {
             throw new System.Exception();
+        }
 
         if (term % 2 == 0)
         {
