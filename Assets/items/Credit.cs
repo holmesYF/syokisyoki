@@ -14,11 +14,12 @@ public class Credit : Item
         this.Name = "Credit";
     }
 
-    //public override void Update()
-    //{
-    //    //Transform t = this.transform;
-    //    //Vector3 pos = t.position;
-    //    //pos.y -= 0.01f;
-    //    //t.position = pos;
-    //}
+    public override void Update()
+    {
+        base.Update();
+        if (this.transform.position.y < -11)
+        {
+            //GameObject.Find("Manager").GetComponent<Manager>().GameOver();
+        }
+    }
 }

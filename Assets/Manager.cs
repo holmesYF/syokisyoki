@@ -48,10 +48,6 @@ public class Manager: MonoBehaviour
 
     void Start()
     {
-        //ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
-        //ElapsedTime.Start();
-        //Debug_ d = GetComponent<Debug_>();
-        //d.call();
         NotifyOnTouch(new ParameterData(0, 0, 1.0f, 0));
     }
 
@@ -106,7 +102,7 @@ public class Manager: MonoBehaviour
             CreateScene2();
         }
         ScoreObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
-        GradeObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit.ToString();
+        GradeObject.GetComponent<Text>().text = GradeStateManager.GetCurrentGrade(Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit);
     }
 
     public void NotifyOnTouch(ParameterData parameterData)
