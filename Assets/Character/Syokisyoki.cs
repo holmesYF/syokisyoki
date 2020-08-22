@@ -6,7 +6,8 @@ using UnityEngine;
 public class Syokisyoki : MonoBehaviour
 {
     //public static Syokisyoki Instance { get; } = new Syokisyoki();
-    public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,1.0f,0);
+    public ParameterData ParameterData { get; private set; } = new ParameterData(0,255,1.0f,0);
+    SpriteRenderer syokirenderer;
 
     private Syokisyoki()
     {
@@ -21,12 +22,15 @@ public class Syokisyoki : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        syokirenderer = this.gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        syokirenderer.color = new Color(ParameterData.BlackDepth, ParameterData.BlackDepth, ParameterData.BlackDepth,255);
+        Debug.Log(ParameterData.BlackDepth);
+        Debug.Log(this.gameObject.GetComponent<SpriteRenderer>().color);
         //　油布の担当
         //  Parameter.Speedの速度で、矢印キー入力に応じ動く
         if (Input.GetKey(KeyCode.LeftArrow)&&(this.gameObject.transform.position.x >= -25.0f))
