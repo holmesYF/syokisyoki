@@ -10,15 +10,16 @@ public class Credit : Item
         // 油布
         this.Picture = Resources.Load<Sprite>("kato");
         this.ParameterData = new ParameterData(100, 0, 1, 1);
-        this.Speed = 1;
+        this.Speed = 3;
         this.Name = "Credit";
     }
 
-    //public override void Update()
-    //{
-    //    //Transform t = this.transform;
-    //    //Vector3 pos = t.position;
-    //    //pos.y -= 0.01f;
-    //    //t.position = pos;
-    //}
+    public override void Update()
+    {
+        base.Update();
+        if (this.transform.position.y < -11)
+        {
+            GameObject.Find("Manager").GetComponent<Manager>().GameOver();
+        }
+    }
 }

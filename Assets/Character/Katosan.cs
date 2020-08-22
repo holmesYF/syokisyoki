@@ -6,7 +6,7 @@ public class Katosan : MonoBehaviour
     public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,0.3f,0);
     //public static Katosan Instance { get; } = new Katosan();
     private Strategy strategy;
-
+    public bool GameFlag;
 
     private Katosan()
     {
@@ -20,18 +20,20 @@ public class Katosan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameFlag = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        // 油布の担当場所
-        // Parameter.Speedの速度で、左右に動く
-        strategy.set_pos(this.gameObject.transform.position);
-        strategy.set_paramater(this.ParameterData);
-        this.transform.position = strategy.get_pos();
+        if (this.GameFlag)
+        {
+            // 油布の担当場所
+            // Parameter.Speedの速度で、左右に動く
+            strategy.set_pos(this.gameObject.transform.position);
+            strategy.set_paramater(this.ParameterData);
+            this.transform.position = strategy.get_pos();
+        }
 
     }
 

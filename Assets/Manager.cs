@@ -17,6 +17,9 @@ public class Manager: MonoBehaviour
     public GameObject Syokisyoki { get; private set; }
     public GameObject ScoreObject;
     public GameObject GradeObject;
+    public GameObject gameover;
+    public GameObject gameclear;
+    bool GameFlag;
     //public ItemFactory ItemFactory = new ItemFactory();
     //public static Manager Instance { get; private set; } = new Manager();
     private Manager()
@@ -24,14 +27,14 @@ public class Manager: MonoBehaviour
 
     }
 
-    private void CreateScene(object sender, ElapsedEventArgs e)
-    {
+    //private void CreateScene(object sender, ElapsedEventArgs e)
+    //{
 
-        Debug.Log("cre8");
-        TermCounter += 1;
-        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki, Vector2.zero);
-        Debug.Log("cl");
-    }
+    //    Debug.Log("cre8");
+    //    TermCounter += 1;
+    //    this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki, Vector2.zero);
+    //    Debug.Log("cl");
+    //}
 
     private void CreateScene2()
     {
@@ -47,18 +50,15 @@ public class Manager: MonoBehaviour
 
     void Start()
     {
-        ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
-        ElapsedTime.Start();
-        //Debug_ d = GetComponent<Debug_>();
-        //d.call();
         NotifyOnTouch(new ParameterData(0, 0, 1.0f, 0));
+        GameFlag = true;
     }
 
     private void Awake()
     {
         CreateKato();
         CreateSyokisyoki();
-        firsttime = 1000;
+        firsttime = 5;
     }
     private void CreateKato()
     {
@@ -99,13 +99,16 @@ public class Manager: MonoBehaviour
 
     void Update()
     {
-        if(firsttime <= Time.time)
+        if (GameFlag)
         {
-            firsttime = Time.time + 1000;
-            CreateScene2();
+            if (firsttime <= Time.time)
+            {
+                firsttime = Time.time + 5;
+                CreateScene2();
+            }
+            ScoreObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
+            GradeObject.GetComponent<Text>().text = GradeStateManager.GetCurrentGrade(Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit);
         }
-        ScoreObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
-        GradeObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit.ToString();
     }
 
     public void NotifyOnTouch(ParameterData parameterData)
@@ -113,6 +116,27 @@ public class Manager: MonoBehaviour
         Syokisyoki.GetComponent<Syokisyoki>().UpdateParameterData(parameterData);
     }
 
+    public void GameOver()
+    {
+        Stop();
+        gameover.transform.Find("Text").gameObject.GetComponent<Text>().text = "あなたは" + GradeStateManager.GetCurrentGrade(Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit) + "で留年しました\n" 
+            + "Score:" + Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
+        gameover.SetActive(true);
+    }
+
+    public void GameClear()
+    {
+        Stop();
+        gameclear.transform.Find("Text").gameObject.GetComponent<Text>().text = "卒業おめでとう\n"
+            + "Score:" + Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
+        gameover.SetActive(true);
+    }
+    private void Stop()
+    {
+        GameFlag = false;
+        Syokisyoki.GetComponent<Syokisyoki>().GameFlag = false;
+        Kato.GetComponent<Katosan>().GameFlag = false;
+    }
 }
 
 

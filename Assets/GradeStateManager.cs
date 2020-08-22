@@ -21,10 +21,10 @@ public class GradeStateManager
 
         if (term % 2 == 0)
         {
-            result += " 前期";
+            result = result +  " 前期";
         }
         else
-            result += " 後期";
+            result = result + " 後期";
 
         return result ; 
     }
