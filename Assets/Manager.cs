@@ -36,16 +36,19 @@ public class Manager: MonoBehaviour
 
     private void CreateScene2()
     {
-        Debug.Log("cre8");
-        Debug_ d = GetComponent<Debug_>();
-        d.call();
         TermCounter += 1;
+        StartCoroutine("CreateItems");
+    }
+    IEnumerator CreateItems()
+    {
         this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki, Vector2.zero);
+        yield return new WaitForSeconds(1); 
         this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kakeru, Vector2.zero);
+        yield return new WaitForSeconds(2);  
         this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Credit, Kato.GetComponent<Transform>().position);
+        yield return new WaitForSeconds(5); 
         this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Yamashita, Vector2.zero);
     }
-
     void Start()
     {
         NotifyOnTouch(new ParameterData(0, 0, 1.0f, 0));

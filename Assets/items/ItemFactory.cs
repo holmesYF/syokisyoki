@@ -37,8 +37,6 @@ public class ItemFactory : MonoBehaviour
     {
         CreatedItemNum[targetItem]++;
         Debug.Log("koko");
-        //GameObject NewObject = new GameObject("Item");
-        //NewObject.AddComponent<SpriteRenderer>();
         var rand = new System.Random();
 
         Vector2 firstPosition = new Vector2(rand.Next(-25, 26), 10);
