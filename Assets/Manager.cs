@@ -121,10 +121,13 @@ public class Manager: MonoBehaviour
 
     public void GameOver()
     {
-        Stop();
-        gameover.transform.Find("Text").gameObject.GetComponent<Text>().text = "あなたは" + GradeStateManager.GetCurrentGrade(Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit) + "で留年しました\n" 
-            + "Score:" + Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
-        gameover.SetActive(true);
+        if (GameFlag)
+        {
+            Stop();
+            gameover.transform.Find("Text").gameObject.GetComponent<Text>().text = "あなたは" + GradeStateManager.GetCurrentGrade(Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit) + "で留年しました\n"
+                + "Score:" + Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
+            gameover.SetActive(true);
+        }
     }
 
     public void GameClear()
