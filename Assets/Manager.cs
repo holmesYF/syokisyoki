@@ -24,15 +24,14 @@ public class Manager: MonoBehaviour
 
     }
 
-    //private void CreateScene(object sender, ElapsedEventArgs e)
-    //{
+    private void CreateScene(object sender, ElapsedEventArgs e)
+    {
 
-    //    Debug.Log("cre8");
-    //    Debug_ d = GetComponent<Debug_>();
-    //    d.call();
-    //    TermCounter += 1;
-    //    this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki);
-    //}
+        Debug.Log("cre8");
+        TermCounter += 1;
+        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki, Vector2.zero);
+        Debug.Log("cl");
+    }
 
     private void CreateScene2()
     {
@@ -48,8 +47,8 @@ public class Manager: MonoBehaviour
 
     void Start()
     {
-        //ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
-        //ElapsedTime.Start();
+        ElapsedTime.Elapsed += new ElapsedEventHandler(CreateScene);
+        ElapsedTime.Start();
         //Debug_ d = GetComponent<Debug_>();
         //d.call();
         NotifyOnTouch(new ParameterData(0, 0, 1.0f, 0));
@@ -59,7 +58,7 @@ public class Manager: MonoBehaviour
     {
         CreateKato();
         CreateSyokisyoki();
-        firsttime = 5;
+        firsttime = 1000;
     }
     private void CreateKato()
     {
@@ -102,7 +101,7 @@ public class Manager: MonoBehaviour
     {
         if(firsttime <= Time.time)
         {
-            firsttime = Time.time + 5;
+            firsttime = Time.time + 1000;
             CreateScene2();
         }
         ScoreObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
