@@ -10,7 +10,7 @@ public class Credit : Item
         // 油布
         this.Picture = Resources.Load<Sprite>("kato");
         this.ParameterData = new ParameterData(100, 0, 1, 1);
-        this.Speed = 1;
+        this.Speed = 3;
         this.Name = "Credit";
     }
 
@@ -19,7 +19,7 @@ public class Credit : Item
         base.Update();
         if (this.transform.position.y < -11)
         {
-            //GameObject.Find("Manager").GetComponent<Manager>().GameOver();
+            GameObject.Find("Manager").GetComponent<Manager>().GameOver();
         }
     }
 }
