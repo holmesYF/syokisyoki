@@ -20,7 +20,7 @@ public class ParameterData
     public void Add(ParameterData newParameter)
     {
         this.Score += newParameter.Score;
-        this.BlackDepth += newParameter.BlackDepth;
+        this.BlackDepth -= newParameter.BlackDepth;
         this.Speed *= newParameter.Speed;
         this.Credit += newParameter.Credit;
     }

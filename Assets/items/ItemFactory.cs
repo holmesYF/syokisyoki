@@ -33,7 +33,6 @@ public class ItemFactory : MonoBehaviour
         CreatedItemNum.Add(ItemList.Yamashita, 0);
     }
 
-
     public void CreateItem(ItemList targetItem, Vector2 position)
     {
         CreatedItemNum[targetItem]++;

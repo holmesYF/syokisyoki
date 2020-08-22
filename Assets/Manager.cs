@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
+using UnityEngine.UI;
 
 public class Manager: MonoBehaviour 
 {
@@ -14,6 +15,8 @@ public class Manager: MonoBehaviour
     float firsttime;
     public GameObject Kato { get; private set; }
     public GameObject Syokisyoki { get; private set; }
+    public GameObject ScoreObject;
+    public GameObject GradeObject;
     //public ItemFactory ItemFactory = new ItemFactory();
     //public static Manager Instance { get; private set; } = new Manager();
     private Manager()
@@ -102,6 +105,8 @@ public class Manager: MonoBehaviour
             firsttime = Time.time + 5;
             CreateScene2();
         }
+        ScoreObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
+        GradeObject.GetComponent<Text>().text = Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Credit.ToString();
     }
 
     public void NotifyOnTouch(ParameterData parameterData)
