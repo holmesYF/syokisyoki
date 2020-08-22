@@ -132,7 +132,7 @@ public class Manager: MonoBehaviour
         Stop();
         gameclear.transform.Find("Text").gameObject.GetComponent<Text>().text = "卒業おめでとう\n"
             + "Score:" + Syokisyoki.GetComponent<Syokisyoki>().ParameterData.Score.ToString();
-        gameover.SetActive(true);
+        gameclear.SetActive(true);
     }
     private void Stop()
     {
