@@ -8,7 +8,7 @@ public class Kusunoki : Item
     {
         // 油布
         this.Picture = Resources.Load<Sprite>("kusunoki");
-        this.ParameterData = new ParameterData(10, 0, 2, 0);
+        this.ParameterData = new ParameterData(10, 0, 1.1f, 0);
         this.Speed = 1;
         this.Name = "Kusunoki";
     }

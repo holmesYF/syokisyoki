@@ -35,11 +35,5 @@ public abstract class Item : MonoBehaviour
     //{
     //    Manager.NotifyOnTouch(this.ParameterData);
     //}
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("touched");
-        Manager.Instance.NotifyOnTouch(this.ParameterData);
-        Debug.Log("touched2");
-        Destroy(this.gameObject);
-    }
+
 }

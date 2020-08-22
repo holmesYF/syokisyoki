@@ -4,7 +4,7 @@ using UnityEngine;
 public class Katosan : MonoBehaviour
 {
     public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,0.3f,0);
-    public static Katosan Instance { get; } = new Katosan();
+    //public static Katosan Instance { get; } = new Katosan();
     private Strategy strategy;
 
 

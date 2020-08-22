@@ -15,29 +15,32 @@ public class Manager: MonoBehaviour
     public GameObject Kato { get; private set; }
     public GameObject Syokisyoki { get; private set; }
     //public ItemFactory ItemFactory = new ItemFactory();
-    public static Manager Instance { get; private set; } = new Manager();
+    //public static Manager Instance { get; private set; } = new Manager();
     private Manager()
     {
 
     }
 
-    private void CreateScene(object sender, ElapsedEventArgs e)
-    {
+    //private void CreateScene(object sender, ElapsedEventArgs e)
+    //{
 
-        Debug.Log("cre8");
-        Debug_ d = GetComponent<Debug_>();
-        d.call();
-        Instance.TermCounter += 1;
-        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki);
-    }
+    //    Debug.Log("cre8");
+    //    Debug_ d = GetComponent<Debug_>();
+    //    d.call();
+    //    TermCounter += 1;
+    //    this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki);
+    //}
 
     private void CreateScene2()
     {
         Debug.Log("cre8");
         Debug_ d = GetComponent<Debug_>();
         d.call();
-        Instance.TermCounter += 1;
-        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki);
+        TermCounter += 1;
+        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki, Vector2.zero);
+        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kakeru, Vector2.zero);
+        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Credit, Kato.GetComponent<Transform>().position);
+        this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Yamashita, Vector2.zero);
     }
 
     void Start()

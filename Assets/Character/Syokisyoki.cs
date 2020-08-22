@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class Syokisyoki : MonoBehaviour
 {
-    public static Syokisyoki Instance { get; } = new Syokisyoki();
+    //public static Syokisyoki Instance { get; } = new Syokisyoki();
     public ParameterData ParameterData { get; private set; } = new ParameterData(0,0,1.0f,0);
-
 
     private Syokisyoki()
     {
@@ -42,5 +41,10 @@ public class Syokisyoki : MonoBehaviour
             syokisyoki_pos.x += ParameterData.Speed;
             this.transform.position = syokisyoki_pos;
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        UpdateParameterData(collision.GetComponent<Item>().ParameterData);
+        Destroy(collision.gameObject);
     }
 }

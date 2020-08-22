@@ -23,7 +23,7 @@ public class ItemFactory : MonoBehaviour
         //kusunoki_prefab = (GameObject)Resources.Load("kusunoki_prefab");
         kakeru_prefab = (GameObject)Resources.Load("kakeru_prefab");
         yamasita_prefab = (GameObject)Resources.Load("yamasita_prefab");
-        credit_prefab = (GameObject)Resources.Load("kusunoki_prefab");
+        credit_prefab = (GameObject)Resources.Load("credit_prefab");
     }
     private void InitCreatedItemNum()
     {
@@ -34,7 +34,7 @@ public class ItemFactory : MonoBehaviour
     }
 
 
-    public void CreateItem(ItemList targetItem)
+    public void CreateItem(ItemList targetItem, Vector2 position)
     {
         CreatedItemNum[targetItem]++;
         Debug.Log("koko");
@@ -46,29 +46,19 @@ public class ItemFactory : MonoBehaviour
         switch(targetItem)
         {
             case ItemList.Credit:
-                //NewObject.name = "Credit";
-                //NewObject.AddComponent<Credit>();
-                //NewObject.GetComponent<SpriteRenderer>().sprite = NewObject.GetComponent<Credit>().Picture;
-                firstPosition = Katosan.Instance.transform.position;
+                Instantiate(credit_prefab, position, Quaternion.identity);
                 break;
 
             case ItemList.Kakeru:
-                //NewObject.name = "Kakeru";
-                //NewObject.AddComponent<Kakeru>();
-                //NewObject.GetComponent<SpriteRenderer>().sprite = NewObject.GetComponent<Kakeru>().Picture;
+                Instantiate(kakeru_prefab, firstPosition, Quaternion.identity);
                 break;
 
             case ItemList.Kusunoki:
                 Instantiate(kusunoki_prefab, firstPosition, Quaternion.identity);
-                //NewObject.name = "Kusunoki";
-                //NewObject.AddComponent<Kusunoki>();
-                //NewObject.GetComponent<SpriteRenderer>().sprite = NewObject.GetComponent<Kusunoki>().Picture;
                 break;
 
             case ItemList.Yamashita:
-                //NewObject.name = "Yamashita";
-                //NewObject.AddComponent<Yamashita>();
-                //NewObject.GetComponent<SpriteRenderer>().sprite = NewObject.GetComponent<Yamashita>().Picture;
+                Instantiate(yamasita_prefab, firstPosition, Quaternion.identity);
                 break;
 
             default:
