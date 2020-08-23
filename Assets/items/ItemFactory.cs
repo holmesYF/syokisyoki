@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ItemFactory : MonoBehaviour
 {
-    public GameObject kusunoki_prefab;
+    GameObject kusunoki_prefab;
     GameObject kakeru_prefab;
     GameObject yamasita_prefab;
     GameObject credit_prefab;
     GameObject hiro_prefab;
-   // public static ItemFactory Instance { get; private set; } = new ItemFactory();
 
     public Dictionary<ItemList, int> CreatedItemNum { get; private set; } = new Dictionary<ItemList, int>();
     //public ItemFactory()
@@ -21,7 +20,7 @@ public class ItemFactory : MonoBehaviour
     private void Awake()
     {
         InitCreatedItemNum();
-        //kusunoki_prefab = (GameObject)Resources.Load("kusunoki_prefab");
+        kusunoki_prefab = (GameObject)Resources.Load("kusunoki_prefab");
         kakeru_prefab = (GameObject)Resources.Load("kakeru_prefab");
         yamasita_prefab = (GameObject)Resources.Load("yamasita_prefab");
         credit_prefab = (GameObject)Resources.Load("credit_prefab");
@@ -39,7 +38,6 @@ public class ItemFactory : MonoBehaviour
     public void CreateItem(ItemList targetItem, Vector2 position)
     {
         CreatedItemNum[targetItem]++;
-        Debug.Log("koko");
         var rand = new System.Random();
 
         Vector2 firstPosition = new Vector2(rand.Next(-25, 26), 10);

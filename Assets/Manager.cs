@@ -22,19 +22,6 @@ public class Manager: MonoBehaviour
     bool GameFlag;
     //public ItemFactory ItemFactory = new ItemFactory();
     //public static Manager Instance { get; private set; } = new Manager();
-    private Manager()
-    {
-
-    }
-
-    //private void CreateScene(object sender, ElapsedEventArgs e)
-    //{
-
-    //    Debug.Log("cre8");
-    //    TermCounter += 1;
-    //    this.gameObject.GetComponent<ItemFactory>().CreateItem(ItemList.Kusunoki, Vector2.zero);
-    //    Debug.Log("cl");
-    //}
 
     private void CreateScene2()
     {

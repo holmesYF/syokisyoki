@@ -6,7 +6,6 @@ public class Hiro : Item
 {
     public override void Start()
     {
-        // 油布
         this.Picture = Resources.Load<Sprite>("hiro");
         this.ParameterData = new ParameterData(10, -50, 1, 0);
         this.Speed = 1;

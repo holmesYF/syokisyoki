@@ -21,18 +21,7 @@ public class Level : MonoBehaviour
                 return new Easy();
         }
     }
-    //public void Change_Easy()
-    //{
-    //    Level.level = 1;
-    //}
-    //public void Change_Normal()
-    //{
-    //    Level.level = 2;
-    //}
-    //public void Change_Hard()
-    //{
-    //    Level.level = 3;
-    //}
+
     public void ChangeLevel()
     {
         Level.level = this.num;

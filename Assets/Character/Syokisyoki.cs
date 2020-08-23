@@ -7,15 +7,10 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Syokisyoki : MonoBehaviour
 {
     //public static Syokisyoki Instance { get; } = new Syokisyoki();
-    public ParameterData ParameterData { get; private set; } = new ParameterData(0,255,1.0f,2);
+    public ParameterData ParameterData { get; private set; } = new ParameterData(0,255,0.7f,2);
     SpriteRenderer syokirenderer;
     public bool GameFlag;
 
-
-    private Syokisyoki()
-    {
-
-    }
 
     public void UpdateParameterData(ParameterData parameterData)
     {
@@ -36,8 +31,6 @@ public class Syokisyoki : MonoBehaviour
             syokirenderer.color = new Color(ParameterData.BlackDepth / 255f, ParameterData.BlackDepth / 255f, ParameterData.BlackDepth / 255f, 255);
             Debug.Log(ParameterData.BlackDepth);
             Debug.Log(this.gameObject.GetComponent<SpriteRenderer>().color);
-            //　油布の担当
-            //  Parameter.Speedの速度で、矢印キー入力に応じ動く
             if (Input.GetKey(KeyCode.LeftArrow) && (this.gameObject.transform.position.x >= -25.0f))
             {
                 Vector3 syokisyoki_pos = this.transform.position;

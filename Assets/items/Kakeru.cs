@@ -9,7 +9,7 @@ public class Kakeru : Item
         // 油布
         this.Picture = Resources.Load<Sprite>("kakeru");
         this.gameObject.GetComponent<SpriteRenderer>().sprite = this.Picture;
-        this.ParameterData = new ParameterData(10, 50, 1, 0);
+        this.ParameterData = new ParameterData(10, 150, 1, 0);
         this.Speed = 1;
         this.Name = "Kakeru";
     }

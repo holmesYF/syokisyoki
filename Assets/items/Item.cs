@@ -29,11 +29,5 @@ public abstract class Item : MonoBehaviour
         this.Speed = Speed;
     }
 
-    // 油布の仕事
-    // オブジェクトが接触したらしたみたいな感じでManagerに渡す。
-    //private OnTouched()
-    //{
-    //    Manager.NotifyOnTouch(this.ParameterData);
-    //}
 
 }
