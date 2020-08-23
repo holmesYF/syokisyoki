@@ -1,0 +1,122 @@
+@startuml
+
+
+
+
+
+class Manager
+{
+    -Timer
+
+    -CreateItem()
+    -Update()
+}
+
+class ItemFactory
+{
+    +CreateItem()
+}
+
+class Shoki
+{
+    +Start()
+    +Update()
+}
+
+class Katosan
+{
+    +Start()
+    +Update()
+    +set_strategy(Strategy strategy)
+}
+
+abstract class Strategy
+{
+    -position
+    +set_pos(Vector2 pos)
+    +get_pos()
+}
+class Easy
+{
+    -direction:bool
+    +get_pos()
+}
+class Normal
+{
+    -direction:int
+    -counter:int
+    +get_pos()
+}
+class Hard
+{
+    -counter:float
+    +get_pos()
+}
+
+
+abstract class Item
+{
+    + Picture 
+    + Speed
+    + Name
+    
+    +Start()
+    +Updata()
+    +ChangeItemSpeed()
+}
+class ParameterData
+{
+    +Score
+    +BlackDepth
+    +Speed
+    +Credit
+
+    +ParameterData()
+    +Add()
+}
+package Items <<Rectangle>>
+{
+    class Hiro
+    {
+        +Start()
+    }
+    class Kakeru
+    {
+        +Start()
+    }
+    class Kusunoki
+    {
+        +Start();
+    }
+    class Yamashita
+    {
+        +Start();
+    }
+    class Credit
+    {
+        +Start();
+    }
+}
+Item <|-- Hiro
+Item <|-- Kusunoki
+Item <|-- Yamashita
+Item <|-- Credit
+Item <|-- Kakeru
+
+Item o- ParameterData
+
+ItemFactory ->"Create" Items 
+
+Manager o-- Katosan
+Manager o-- Shoki
+Manager o-- ItemFactory
+
+Strategy <|-- Easy
+Strategy <|-- Normal
+Strategy <|-- Hard
+
+Katosan o-- Strategy
+
+
+
+@enduml
